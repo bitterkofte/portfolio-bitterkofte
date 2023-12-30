@@ -8,7 +8,6 @@ const RootLayout = () => {
       <Navbar/>
       <div className="min-h-screen px-5 md:px-10 pt-32 dark:bg-neutral-700 transition-colors duration-500">
         <Outlet/>
-        <div>Footer</div>
       </div>
       <Footer/>
     </div>

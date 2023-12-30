@@ -6,4 +6,12 @@
   .my-drop-shadow {
     filter: drop-shadow(0px 0px 4px #f8f8f8ba);
   }
+  .about-bg {
+    background-image:radial-gradient(100% 100% at 0% 50%, #c837bc 42%, rgba(190, 81, 161, 0.75) 56.5%, rgba(176, 99, 141, 0.5) 71%, rgba(128, 128, 128, 0) 100%), linear-gradient(180deg, #ecc94b 0%, #e1a148 16.33%, #d53a42 49%, #c93a51 58.67%, #b1385e 78%, #9a3161 85.33%, #702459 100%)
+  }
+}
+
+::selection {
+  color: #ffffff;
+  background-color: #8501e1;
 }

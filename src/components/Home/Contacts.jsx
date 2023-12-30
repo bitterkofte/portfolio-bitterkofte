@@ -1,5 +1,5 @@
 import SvgIcon from "../SVGs/SvgIcon"
-import contact from "./contact"
+// import contact from "./contact"
 
 const Contacts = () => {
   const myContacts = ["github", "linkedin", "gmail", "codewars", "stackoverflow"];
@@ -13,8 +13,8 @@ const Contacts = () => {
           </div>
         ))} */}
         {myContacts.map((platform, i) => (
-          <div key={i} className="w-14 h-14 bg-contact-bg rounded-md flex items-center hover:scale-105 transition-all duration-300">
-            <SvgIcon icon={platform} style="p-4 w-14 h-14 dark:fill-neutral-200 hover:my-drop-shadow transition-all duration-300" />
+          <div key={i} className="w-14 h-14 bg-contact-bg rounded-md flex items-center hover:cursor-pointer hover:scale-105 transition-all duration-300">
+            <SvgIcon icon={platform} style="p-4 w-14 h-14 fill-neutral-200 dark:fill-neutral-200 hover:my-drop-shadow transition-all duration-300" />
           </div>
         ))}
       </div>

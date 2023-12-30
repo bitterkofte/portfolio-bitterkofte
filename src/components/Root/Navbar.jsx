@@ -5,6 +5,21 @@ import { BsSun } from "react-icons/bs"
 const Navbar = () => {
   // const [isMenu, setIsMenu] = useState(false);
   const [theme, setTheme] = useState("dark");
+  const [show, setShow] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const controlNavbar = () => {
+      if (window.scrollY > lastScrollY) setShow(false);
+      else setShow(true);
+      setLastScrollY(window.scrollY);
+    };
+    
+    window.addEventListener('scroll', controlNavbar);
+    return () => {
+      window.removeEventListener('scroll', controlNavbar);
+    };
+  }, [lastScrollY]);
 
   useEffect(() => {
     if (theme === "dark") {
@@ -19,7 +34,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="fixed z-10 w-full p-4 flex top-0 justify-between items-center bg-neutral-300 dark:bg-neutral-900 drop-shadow-lg transition-all duration-500">
+    <div className={`${!show && "-translate-y-24"} fixed z-10 w-full p-4 flex top-0 justify-between items-center bg-l-nav-bg dark:bg-d-nav-bg backdrop-blur-lg drop-shadow-lg transition-all duration-500`}>
       <div className="dark:text-neutral-200 font-black text-3xl select-none transition-all duration-500">
         Hasan Çelik
       </div>

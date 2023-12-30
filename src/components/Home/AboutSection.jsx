@@ -1,7 +1,7 @@
 import about from './about'
 import me from '../../assets/alonso2.jpg'
-import GrandButton from '../Buttons/GrandButton'
-import Paragraph from '../General/Paragraph'
+// import GrandButton from '../Buttons/GrandButton'
+// import Paragraph from '../General/Paragraph'
 import Contacts from './Contacts'
 
 const AboutSection = () => {

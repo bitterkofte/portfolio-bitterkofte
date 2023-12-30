@@ -1,7 +1,9 @@
 const Footer = () => {
   return (
-    <div className="bg-neutral-400 dark:bg-neutral-900">
-      <div className="dark:text-neutral-200 duration-500">Footer</div>
+    <div className="p-6 bg-neutral-400 dark:bg-neutral-900 flex justify-center gap-10 dark:text-neutral-200 duration-500">
+      <div className="">Footer</div>
+      <p>(●'◡'●)</p>
+      <img src="" alt="" />
     </div>
   )
 }

@@ -1,4 +1,5 @@
 import ProjectCard from "./ProjectCard";
+import { projects } from "../../../data/projects";
 
 const ProjectSection = () => {
   return (
@@ -14,9 +15,12 @@ const ProjectSection = () => {
         infancy. Various versions have evolved over the years, sometimes by
         accident, sometimes on purpose (injected humour and the like).
       </p>
-      <div className="flex items-center">
+      <div className="flex items-center gap-4">
         {/* SECTION - PROJECT CARDS */}
-        <ProjectCard/>
+        {/* <ProjectCard title={projects[0].name} desc={projects[0].desc} tools={projects[0].tools}/> */}
+        {projects.map(p => (
+          <ProjectCard key={p.id} title={p.name} desc={p.desc} tools={p.tools}/>
+        ))}
       </div>
       <div className="">{/* SECTION - RIGHT MORE BUTTON */}</div>
     </div>

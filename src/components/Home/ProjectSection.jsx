@@ -1,5 +1,7 @@
 import ProjectCard from "./ProjectCard";
 import { projects } from "../../../data/projects";
+import { FaArrowRight } from "react-icons/fa6";
+import { Tooltip } from "react-tooltip";
 
 const ProjectSection = () => {
   return (
@@ -15,14 +17,16 @@ const ProjectSection = () => {
         infancy. Various versions have evolved over the years, sometimes by
         accident, sometimes on purpose (injected humour and the like).
       </p>
-      <div className="flex items-center gap-4">
-        {/* SECTION - PROJECT CARDS */}
-        {/* <ProjectCard title={projects[0].name} desc={projects[0].desc} tools={projects[0].tools}/> */}
-        {projects.map(p => (
+      <div className="relative flex d-lg:justify-center u-xl:justify-between items-center flex-wrap gap-4">
+        {projects.slice(0,5).map(p => (
           <ProjectCard key={p.id} title={p.name} desc={p.desc} tools={p.tools}/>
         ))}
+        <div className="absolute w-96 h-full u-lg:right-0 u-lg:top-0 d-lg:w-full d-lg:h-52 d-lg:bottom-0 d-lg:left-0 flex d-lg:flex-col justify-end items-center bg-gradient-to-r from-transparent to-sky-700 d-lg:bg-gradient-to-b rounded-r-xl d-lg:rounded-b-xl select-none">
+          <button className="w-20 h-10 bg-red-400 u-lg:mr-5 d-lg:mb-5  flex justify-center items-center gap-2 rounded-full"><p className="font-semibold">More</p><FaArrowRight/></button>
+          {/* <button className="w-10 h-10 absolute top-1/2 right-0 bg-red-400">+</button> */}
+        </div>
       </div>
-      <div className="">{/* SECTION - RIGHT MORE BUTTON */}</div>
+      <Tooltip id="tools" style={{backdropFilter: 'blur(20px)', background: '#ffffff55', borderRadius: '10px', border: "0"}} arrowColor="#ffffff55"/>
     </div>
   );
 };

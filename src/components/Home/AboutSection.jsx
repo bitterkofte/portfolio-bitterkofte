@@ -6,7 +6,7 @@ import Contacts from './Contacts'
 
 const AboutSection = () => {
   return (
-    <div className="flex d-lg:flex-col-reverse justify-center items-stretch gap-20 text-justify ">
+    <div className="flex d-lg:flex-col-reverse justify-center items-stretch d-lg:gap-10 gap-20 text-justify ">
       <div className="flex flex-col justify-between gap-4 flex-[2] font-thin">
         <p className='dark:text-neutral-200 duration-500'>{ about.firstP }</p>
         <p className='dark:text-neutral-200 duration-500'>{ about.secondP }</p>

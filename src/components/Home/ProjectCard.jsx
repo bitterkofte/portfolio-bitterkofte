@@ -8,34 +8,28 @@ const ProjectCard = ({ title, desc, tools }) => {
   // console.log('correspondingIcon: ', findIcon(["react", "react-navigation", "firebase", "expo-icons"]))
   // const correspondingIcon = <SiReact  />;
   return (
-    <div className="p-6 flex flex-col gap-5 bg-teal-600 dark:bg-teal-800 rounded-xl hover:drop-shadow-lg transition-all duration-300">
+    <div className="w-60 h-[340px] p-6 flex flex-col justify-between gap-5 bg-teal-600 dark:bg-teal-800 rounded-xl hover:drop-shadow-lg transition-all duration-300">
       <img
         className="w-28 rounded-xl drop-shadow-md self-center"
         src={alonso}
         alt="project-logo"
       />
       <h3 className="text-xl font-bold dark:text-neutral-200 duration-500">
-        { title.length>15 ? title.slice(0, 13)+'...' : title }
+        {title.length > 15 ? title.slice(0, 13) + "..." : title}
       </h3>
-      <p className="dark:text-neutral-200 duration-500">{ desc.slice(0, 30) }</p>
+      <p className="dark:text-neutral-200 duration-500">{desc.slice(0, 30)}</p>
       <div className=" flex items-center gap-2">
-        {/* {Array(5)
-          .fill(0)
-          .map((t) => {
-            switch (true) {
-              case "react":
-                return <SiReact className="p-2 bg-neutral-300" />;
-
-              default:
-                return <SiReact />;
-            }
-          })} */}
-        {correspondingIcon.map(m => (
-          <div key={m} className='p-2 bg-neutral-500 rounded-lg text-neutral-200'>
-            { m }
+        {correspondingIcon.map((m, i) => (
+          <div
+            key={i}
+            className="p-2 bg-neutral-500 rounded-lg text-neutral-200 select-none"
+            data-tooltip-id="tools"
+            data-tooltip-content={m.name}
+            data-tooltip-place="top"
+          >
+            {m.icon}
           </div>
         ))}
-        {/* {correspondingIcon.map(m => m)} */}
       </div>
     </div>
   );
